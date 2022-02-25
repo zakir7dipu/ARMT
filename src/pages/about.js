@@ -3,7 +3,13 @@ import Navbar from "../components/Navbar";
 import PageTitle from "../components/Pagetitle"
 import AboutSection from "../components/About2"
 import Footer from "../components/Footer";
+import Scrollbar from "../components/Scrollbar";
 class About extends Component {
+
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
+
     render() {
         return (
             <Fragment>
@@ -11,6 +17,7 @@ class About extends Component {
                 <PageTitle pageTitle={'About Us'} pagesub={'About'}/>
                 <AboutSection/>
                 <Footer/>
+                <Scrollbar/>
             </Fragment>
         );
     }

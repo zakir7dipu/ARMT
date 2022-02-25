@@ -6,8 +6,14 @@ import Features from "../components/Featurs";
 import EventSection from "../components/Events";
 import Partner from "../components/Partner";
 import Footer from "../components/Footer";
+import Scrollbar from "../components/Scrollbar";
 
 class Home extends Component {
+
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
+
     render() {
         return (
             <Fragment>
@@ -18,6 +24,7 @@ class Home extends Component {
                 <EventSection/>
                 <Partner/>
                 <Footer/>
+                <Scrollbar/>
             </Fragment>
         );
     }
