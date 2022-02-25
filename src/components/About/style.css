@@ -220,12 +220,15 @@
   .video-btn2 .wrap .fi:before{
     font-size: 50px;
     font-size: 3.125rem;
-    color: #03b664;
+    color: #03b664!important;
   }
-
 
   .video-area img{
      width: 100%;
+
+  }
+  .video-area{
+    position: relative;
   }
 
   @media(max-width:991px){
