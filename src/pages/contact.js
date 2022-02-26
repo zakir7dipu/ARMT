@@ -15,6 +15,7 @@ class Contact extends Component {
     render() {
         return (
             <Fragment>
+                <title>ARMT | Contact</title>
                 <Navbar/>
                 <PageTitle pageTitle={'Contact Us'} pagesub={'Contact'}/>
                 <ContactSection/>

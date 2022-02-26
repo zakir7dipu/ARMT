@@ -13,6 +13,7 @@ class About extends Component {
     render() {
         return (
             <Fragment>
+                <title>ARMT | About Us</title>
                 <Navbar/>
                 <PageTitle pageTitle={'About Us'} pagesub={'About'}/>
                 <AboutSection/>

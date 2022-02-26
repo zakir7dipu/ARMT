@@ -17,6 +17,7 @@ class Home extends Component {
     render() {
         return (
             <Fragment>
+                <title>ARMT | Home</title>
                 <Navbar/>
                 <Hero/>
                 <About/>

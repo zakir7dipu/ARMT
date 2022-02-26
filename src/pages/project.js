@@ -15,6 +15,7 @@ class Project extends Component {
         return (
             <div>
                 <Fragment>
+                    <title>ARMT | Project</title>
                     <Navbar/>
                     <PageTitle pageTitle={'All Project'} pagesub={'Projects'}/>
                     <Projects/>
