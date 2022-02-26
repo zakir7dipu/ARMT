@@ -1,10 +1,11 @@
 import React, {Component, Fragment} from 'react';
 import Navbar from "../components/Navbar";
-import PageTitle from "../components/Pagetitle"
+import PageTitle from "../components/Pagetitle";
 import Footer from "../components/Footer";
 import Scrollbar from "../components/Scrollbar";
+import Projects from "../components/Projects";
 
-class About extends Component {
+class Project extends Component {
 
     componentDidMount() {
         window.scrollTo(0, 0)
@@ -12,14 +13,17 @@ class About extends Component {
 
     render() {
         return (
-            <Fragment>
-                <Navbar/>
-                <PageTitle pageTitle={'All Project'} pagesub={'Projects'}/>
-                <Footer/>
-                <Scrollbar/>
-            </Fragment>
+            <div>
+                <Fragment>
+                    <Navbar/>
+                    <PageTitle pageTitle={'All Project'} pagesub={'Projects'}/>
+                    <Projects/>
+                    <Footer/>
+                    <Scrollbar/>
+                </Fragment>
+            </div>
         );
     }
 }
 
-export default About;
+export default Project;

@@ -1,10 +1,12 @@
 import React, {Component, Fragment} from 'react';
 import Navbar from "../components/Navbar";
-import PageTitle from "../components/Pagetitle"
+import PageTitle from "../components/Pagetitle";
+import ContactSection from "../components/Contact";
 import Footer from "../components/Footer";
 import Scrollbar from "../components/Scrollbar";
 
-class About extends Component {
+
+class Contact extends Component {
 
     componentDidMount() {
         window.scrollTo(0, 0)
@@ -15,6 +17,7 @@ class About extends Component {
             <Fragment>
                 <Navbar/>
                 <PageTitle pageTitle={'Contact Us'} pagesub={'Contact'}/>
+                <ContactSection/>
                 <Footer/>
                 <Scrollbar/>
             </Fragment>
@@ -22,4 +25,4 @@ class About extends Component {
     }
 }
 
-export default About;
+export default Contact;
