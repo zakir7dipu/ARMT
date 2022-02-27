@@ -9,10 +9,6 @@ import VideoModal from "../ModalVideo";
 import {Link} from "react-router-dom";
 import '../../assets/css/flaticon.css'
 class Index extends Component {
-    constructor() {
-        super();
-    }
-
     ClickHandler = () =>{
         window.scrollTo(10, 0);
     }

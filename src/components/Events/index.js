@@ -3,8 +3,6 @@ import {Col, Container, Row} from "react-bootstrap";
 import event1 from '../../assets/images/event/1.jpg'
 import event2 from '../../assets/images/event/2.jpg'
 import event3 from '../../assets/images/event/3.jpg'
-import event4 from '../../assets/images/event/1.png'
-import event5 from '../../assets/images/event/2.png'
 
 import './style.css'
 import {Link} from "react-router-dom";

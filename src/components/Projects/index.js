@@ -7,10 +7,6 @@ import causesimg3 from '../../assets/images/cause/img-3.jpg'
 import './style.css'
 class Index extends Component {
 
-    constructor() {
-        super();
-    }
-
     ClickHandler = () =>{
         window.scrollTo(10, 0);
     }

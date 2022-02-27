@@ -38,22 +38,28 @@ class Index extends Component {
                                 <p>It is a long established fact that a reader will be distracted by thethe readable content off a page when looking at its layout point using Lorem Ipsum is that it has.</p>
                                 <div className="ab-icon-area">
                                     <div className="about-icon-wrap">
-                                        <div className="about-icon-item">
-                                            <div className="ab-icon">
-                                                <img draggable="false" src={abimg2} alt="" />
-                                            </div>
-                                            <div className="ab-text">
-                                                <h2><Link onClick={this.ClickHandler} to="/">Save  Children.</Link></h2>
-                                            </div>
-                                        </div>
-                                        <div className="about-icon-item">
-                                            <div className="ab-icon ab-icon2">
-                                                <img draggable="false" src={abimg3} alt="" />
-                                            </div>
-                                            <div className="ab-text">
-                                                <h2><Link onClick={this.ClickHandler} to="/">Fresh And  Clean Water.</Link></h2>
-                                            </div>
-                                        </div>
+                                        <Row>
+                                            <Col lg={6} className="p-1">
+                                                <div className="about-icon-item">
+                                                    <div className="ab-icon">
+                                                        <img draggable="false" src={abimg2} alt="" />
+                                                    </div>
+                                                    <div className="ab-text">
+                                                        <h2><Link onClick={this.ClickHandler} to="/">Save  Children.</Link></h2>
+                                                    </div>
+                                                </div>
+                                            </Col>
+                                            <Col lg={6} className="p-1">
+                                                <div className="about-icon-item">
+                                                    <div className="ab-icon ab-icon2">
+                                                        <img draggable="false" src={abimg3} alt="" />
+                                                    </div>
+                                                    <div className="ab-text">
+                                                        <h2><Link onClick={this.ClickHandler} to="/">Fresh And  Clean Water.</Link></h2>
+                                                    </div>
+                                                </div>
+                                            </Col>
+                                        </Row>
                                     </div>
                                 </div>
                             </div>

@@ -16,7 +16,7 @@ class Index extends Component {
                                 <Col>
                                     <h2>{this.props.pageTitle}</h2>
                                     <ol className="breadcrumb">
-                                        <li><Link href="/">Home</Link></li>
+                                        <li><Link to="/">Home</Link></li>
                                         <li>{this.props.pagesub}</li>
                                     </ol>
                                 </Col>

@@ -1,19 +1,32 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 
-import partner1 from '../../assets/images/partners/1.png'
-import partner2 from '../../assets/images/partners/2.png'
-import partner3 from '../../assets/images/partners/3.png'
-import partner4 from '../../assets/images/partners/4.png'
-import partner5 from '../../assets/images/partners/5.png'
-
 import './style.css'
+import axios from "axios";
 
 
 
 class Partner extends Component {
-    render() {
 
+    constructor() {
+        super();
+
+        this.state = {
+            basePath: "http://127.0.0.1:8000",
+            partners: []
+        }
+    }
+
+    componentDidMount() {
+        axios.get(`${this.state.basePath}/api/app/partner`)
+            .then(res => {
+                this.setState({partners: res.data})
+            }).catch(err => {
+                console.log(err)
+        })
+    }
+
+    render() {
         var settings = {
             dots: false,
             arrows: false,
@@ -66,36 +79,14 @@ class Partner extends Component {
                         <div className="col col-xs-12">
                             <div className="partner-grids partners-slider">
                             <Slider {...settings}>
-                                <div className="grid">
-                                   <img src={partner1} alt="" />
-                                </div>
-                                <div className="grid">
-                                  <img src={partner2} alt="" />
-                                </div>
-                                <div className="grid">
-                                  <img src={partner3} alt="" />
-                                </div>
-                                <div className="grid">
-                                    <img src={partner4} alt="" />
-                                </div>
-                                <div className="grid">
-                                    <img src={partner5} alt="" />
-                                </div>
-                                <div className="grid">
-                                   <img src={partner1} alt="" />
-                                </div>
-                                <div className="grid">
-                                  <img src={partner2} alt="" />
-                                </div>
-                                <div className="grid">
-                                  <img src={partner3} alt="" />
-                                </div>
-                                <div className="grid">
-                                    <img src={partner4} alt="" />
-                                </div>
-                                <div className="grid">
-                                    <img src={partner5} alt="" />
-                                </div>
+                                {this.state.partners.map(item => {
+                                    return(
+                                        <div className="grid" key={item.id}>
+                                            <img src={`${this.state.basePath}/${item.image}`} alt="" className="img-thumbnail"/>
+                                        </div>
+                                    )
+                                })}
+
                             </Slider>
                             </div>
                         </div>

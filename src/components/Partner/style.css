@@ -23,9 +23,11 @@
 }
 
 .partners-section .grid img{
-  width: auto;
+  width: 130px !important;
+  height:130px !important;
   margin: 0 auto;
   display: inline-block;
+  border-radius: 15px;
 }
 
 @media(max-width: 1200px){
