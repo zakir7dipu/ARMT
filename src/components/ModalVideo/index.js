@@ -4,7 +4,7 @@ import '../../../node_modules/react-modal-video/scss/modal-video.scss';
 
 class VideoModal extends React.Component {
  
-  constructor () {
+  constructor (props) {
     super()
     this.state = {
       isOpen: false
@@ -19,7 +19,7 @@ class VideoModal extends React.Component {
   render () {
     return (
       <div>
-        <ModalVideo channel='youtube' isOpen={this.state.isOpen} videoId='IkUevK4jS3U' onClose={() => this.setState({isOpen: false})} />
+        <ModalVideo channel='youtube' isOpen={this.state.isOpen} videoId={this.props.video} onClose={() => this.setState({isOpen: false})} />
           <div className="video-btn">
               <ul>
                   <li>

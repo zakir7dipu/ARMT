@@ -8,21 +8,53 @@ import abimg4 from '../../assets/images/shape/shape2.png'
 import VideoModal from "../ModalVideo";
 import {Link} from "react-router-dom";
 import '../../assets/css/flaticon.css'
+import axios from "../../axios-plugin";
 class Index extends Component {
+    constructor() {
+        super();
+        this.state = {
+            basePath: "http://127.0.0.1:8000",
+            sectionImage: null,
+            thumb: null,
+            title: null,
+            discription: null
+        }
+    }
+
     ClickHandler = () =>{
         window.scrollTo(10, 0);
     }
 
+    componentDidMount() {
+        axios.get(`/api/app/about`)
+            .then(res => {
+                this.setState({
+                    thumbImage: res.data.thumb_image,
+                    thumb: res.data.thumb,
+                    title: res.data.title,
+                    discription: res.data.description,
+                    videoId: res.data.video_id,
+                })
+                console.log(res.data)
+            }).catch(err => {
+            console.log(err)
+        });
+    }
+
+    aboutPageDescription = () => {
+        document.querySelector('.aboutPageDescription').innerHTML = this.state.discription;
+    }
+
     render() {
         return (
-            <div className="about-area section-padding">
+            <div className="about-area section-padding" onLoad={this.aboutPageDescription}>
                 <Container>
                     <Row>
                         <Col lg={5} md={12} className="grid">
                             <div className="video-area">
-                                <img src={abimg} alt="" />
+                                <img src={this.state.basePath+this.state.thumbImage} alt="" />
                                 <div className="entry-media video-holder video-btn2">
-                                    <VideoModal/>
+                                    <VideoModal video={this.state.videoId}/>
                                 </div>
                             </div>
                         </Col>
@@ -30,11 +62,11 @@ class Index extends Component {
                             <div className="about-text">
                                 <div className="section-title">
                                     <div className="thumb-text">
-                                        <span>ABOUT US</span>
+                                        <span>{this.state.thumb}</span>
                                     </div>
-                                    <h2>Khairah is <span>Nonprofit</span> Organization <span>For Help</span> Children.</h2>
+                                    <h2>{this.state.title}</h2>
                                 </div>
-                                <p>It is a long established fact that a reader will be distracted by thethe readable content off a page when looking at its layout point using Lorem Ipsum is that it has.</p>
+                                <p className="aboutPageDescription"></p>
                                 <div className="ab-icon-area">
                                     <div className="about-icon-wrap">
                                         <div className="about-icon-item">
