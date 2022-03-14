@@ -10,8 +10,7 @@ import hero4 from '../../assets/images/shape/shape.png'
 import './style.css'
 import {Container} from "react-bootstrap";
 import {Link} from "react-router-dom";
-import axios from "axios";
-
+import axios from "../../axios-plugin";
 
 
 class Hero extends Component {
@@ -26,7 +25,7 @@ class Hero extends Component {
     }
 
     componentDidMount() {
-        axios.get(`${this.state.basePath}/api/app/slider`)
+        axios.get(`/api/app/slider`)
             .then(res => {
                 this.setState({sliders: res.data})
             }).catch(err => {

@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 
 import './style.css'
-import axios from "axios";
-
+import axios from "../../axios-plugin";
 
 
 class Partner extends Component {
@@ -18,7 +17,7 @@ class Partner extends Component {
     }
 
     componentDidMount() {
-        axios.get(`${this.state.basePath}/api/app/partner`)
+        axios.get(`/api/app/partner`)
             .then(res => {
                 this.setState({partners: res.data})
             }).catch(err => {
