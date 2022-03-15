@@ -3,7 +3,7 @@ import Header from "../Header";
 
 class Index extends Component {
 
-    constructor() {
+    constructor(props) {
         super();
         this.state={
             scrollNav: "fixed-navbar"
@@ -25,7 +25,7 @@ class Index extends Component {
     render() {
         return (
             <div className={this.state.scrollNav}>
-                <Header />
+                <Header logo={this.props.logo} phone={this.props.phone} email={this.props.email}/>
             </div>
         );
     }

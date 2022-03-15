@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Col, Container, Row} from "react-bootstrap";
 
-import abimg from '../../assets/images/about.jpg'
 import abimg2 from '../../assets/images/about/1.png'
 import abimg3 from '../../assets/images/about/2.png'
 import abimg4 from '../../assets/images/shape/shape2.png'
@@ -35,7 +34,6 @@ class Index extends Component {
                     discription: res.data.description,
                     videoId: res.data.video_id,
                 })
-                console.log(res.data)
             }).catch(err => {
             console.log(err)
         });

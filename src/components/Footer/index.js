@@ -9,7 +9,34 @@ import n5 from '../../assets/images/instragram/5.jpg'
 import n6 from '../../assets/images/instragram/6.jpg'
 import './style.css'
 import {Link} from "react-router-dom";
+import axios from "../../axios-plugin";
 class Index extends Component {
+
+    constructor() {
+        super();
+        this.state = {
+            about: null,
+            address: null,
+            phone: null,
+            email: null
+        }
+    }
+
+    componentDidMount() {
+        window.scrollTo(0, 0)
+        axios.get(`/api/app/base-info`)
+            .then(res => {
+                this.setState({
+                    logo: res.data.logo,
+                    about: res.data.about,
+                    address: res.data.address,
+                    phone: res.data.phone,
+                    email: res.data.email,
+                })
+            }).catch(err => {
+            console.log(err)
+        })
+    }
 
     ClickHandler = () =>{
         window.scrollTo(10, 0);
@@ -21,12 +48,12 @@ class Index extends Component {
                 <div className="tp-upper-footer">
                     <Container>
                         <Row>
-                            <Col lg={3} md={6} sm={12}>
+                            <Col lg={4} md={6} sm={12}>
                                 <div className="widget about-widget">
                                     <div className="footer-logo widget-title">
-                                        <Link onClick={this.ClickHandler} to="/"><img src={Logo} alt="logo"/>Khai<span>rah.</span></Link>
+                                        <Link onClick={this.ClickHandler} to="/"><p>{this.state.about}</p></Link>
                                     </div>
-                                    <p>Build and Earn with your online store with lots of cool and exclusive tp-features </p>
+                                    <p></p>
                                     <ul>
                                         <li><Link onClick={this.ClickHandler} to="/"><i className="ti-facebook"></i></Link></li>
                                         <li><Link onClick={this.ClickHandler} to="/"><i className="ti-twitter-alt"></i></Link></li>
@@ -35,7 +62,7 @@ class Index extends Component {
                                     </ul>
                                 </div>
                             </Col>
-                            <Col lg={2} md={6} sm={12}>
+                            <Col lg={4} md={6} sm={12}>
                                 <div className="widget link-widget">
                                     <div className="widget-title">
                                         <h3>Useful Links</h3>
@@ -47,36 +74,35 @@ class Index extends Component {
                                     </ul>
                                 </div>
                             </Col>
-                            <Col lg={3} md={6} sm={12} className="col-lg-offset-1">
+                            <Col lg={4} md={6} sm={12} className="col-lg-offset-1">
                                 <div className="widget market-widget tp-service-link-widget">
                                     <div className="widget-title">
                                         <h3>Contact </h3>
                                     </div>
-                                    <p>online store with lots of cool and exclusive tp-features</p>
                                     <div className="contact-ft">
                                         <ul>
-                                            <li><i className="fi flaticon-pin"></i>28 Street, New York City, USA</li>
-                                            <li><i className="fi flaticon-call"></i>+000123456789</li>
-                                            <li><i className="fi flaticon-envelope"></i>khairah@gmail.com</li>
+                                            <li><i className="fi flaticon-pin"></i>{this.state.address}</li>
+                                            <li><i className="fi flaticon-call"></i>{this.state.phone}</li>
+                                            <li><i className="fi flaticon-envelope"></i>{this.state.email}</li>
                                         </ul>
                                     </div>
                                 </div>
                             </Col>
-                            <Col lg={3} md={6} sm={12}>
-                                <div className="widget instagram">
-                                    <div className="widget-title">
-                                        <h3>Instagram</h3>
-                                    </div>
-                                    <ul className="d-flex">
-                                        <li><Link onClick={this.ClickHandler} to="/"><img src={n1} alt=""/></Link></li>
-                                        <li><Link onClick={this.ClickHandler} to="/"><img src={n2} alt=""/></Link></li>
-                                        <li><Link onClick={this.ClickHandler} to="/"><img src={n3} alt=""/></Link></li>
-                                        <li><Link onClick={this.ClickHandler} to="/"><img src={n4} alt=""/></Link></li>
-                                        <li><Link onClick={this.ClickHandler} to="/"><img src={n5} alt=""/></Link></li>
-                                        <li><Link onClick={this.ClickHandler} to="/"><img src={n6} alt=""/></Link></li>
-                                    </ul>
-                                </div>
-                            </Col>
+                            {/*<Col lg={3} md={6} sm={12}>*/}
+                            {/*    <div className="widget instagram">*/}
+                            {/*        <div className="widget-title">*/}
+                            {/*            <h3>Instagram</h3>*/}
+                            {/*        </div>*/}
+                            {/*        <ul className="d-flex">*/}
+                            {/*            <li><Link onClick={this.ClickHandler} to="/"><img src={n1} alt=""/></Link></li>*/}
+                            {/*            <li><Link onClick={this.ClickHandler} to="/"><img src={n2} alt=""/></Link></li>*/}
+                            {/*            <li><Link onClick={this.ClickHandler} to="/"><img src={n3} alt=""/></Link></li>*/}
+                            {/*            <li><Link onClick={this.ClickHandler} to="/"><img src={n4} alt=""/></Link></li>*/}
+                            {/*            <li><Link onClick={this.ClickHandler} to="/"><img src={n5} alt=""/></Link></li>*/}
+                            {/*            <li><Link onClick={this.ClickHandler} to="/"><img src={n6} alt=""/></Link></li>*/}
+                            {/*        </ul>*/}
+                            {/*    </div>*/}
+                            {/*</Col>*/}
                         </Row>
                     </Container>
                 </div>

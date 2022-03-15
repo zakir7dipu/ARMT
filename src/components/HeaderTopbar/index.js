@@ -7,6 +7,10 @@ import {Link} from "react-router-dom";
 // import {Link} from "react-router-dom";
 
 class Index extends Component {
+    constructor(props) {
+        super();
+    }
+
     render() {
         return (
             <div className="topbar">
@@ -15,8 +19,8 @@ class Index extends Component {
                         <Col lg={6} md={6} sm={12}>
                             <div className="contact-intro">
                                 <ul>
-                                    <li><i className="fi flaticon-call"></i>+000123456789</li>
-                                    <li><i className="fi flaticon-envelope"></i> khairah@gmail.com</li>
+                                    <li><i className="fi flaticon-call"></i>{this.props.phone}</li>
+                                    <li><i className="fi flaticon-envelope"></i> {this.props.email}</li>
                                 </ul>
                             </div>
                         </Col>

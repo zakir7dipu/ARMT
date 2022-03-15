@@ -7,7 +7,7 @@ import './style.css'
 import MobileMenu from "../MobileMenu";
 import {Link} from "react-router-dom";
 class Index extends Component {
-    constructor() {
+    constructor(props) {
         super();
         this.state={
             homeNav: null,
@@ -33,14 +33,14 @@ class Index extends Component {
     render() {
         return (
             <div className="middle-header">
-                 <HeaderTopbar/>
+                 <HeaderTopbar phone={this.props.phone} email={this.props.email}/>
                 <div className="header-style-3">
                     <Container>
                         <div className="header-content">
                             <Row>
                                 <Col lg={3} md={4} sm={4}>
                                     <div className="logo">
-                                        <Link to="/" title=""><img src={Logo} alt=""/> Khairah</Link>
+                                        <Link to="/" title=""><img src={this.props.logo} alt="logo"/></Link>
                                     </div>
                                 </Col>
                                 
