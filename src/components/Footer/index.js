@@ -1,41 +1,12 @@
 import React, {Component} from 'react';
 import {Col, Container, Row} from "react-bootstrap";
-import Logo from '../../assets/images/logo/logo.png'
-import n1 from '../../assets/images/instragram/1.jpg'
-import n2 from '../../assets/images/instragram/2.jpg'
-import n3 from '../../assets/images/instragram/3.jpg'
-import n4 from '../../assets/images/instragram/4.jpg'
-import n5 from '../../assets/images/instragram/5.jpg'
-import n6 from '../../assets/images/instragram/6.jpg'
+
 import './style.css'
 import {Link} from "react-router-dom";
-import axios from "../../axios-plugin";
 class Index extends Component {
 
-    constructor() {
+    constructor(props) {
         super();
-        this.state = {
-            about: null,
-            address: null,
-            phone: null,
-            email: null
-        }
-    }
-
-    componentDidMount() {
-        window.scrollTo(0, 0)
-        axios.get(`/api/app/base-info`)
-            .then(res => {
-                this.setState({
-                    logo: res.data.logo,
-                    about: res.data.about,
-                    address: res.data.address,
-                    phone: res.data.phone,
-                    email: res.data.email,
-                })
-            }).catch(err => {
-            console.log(err)
-        })
     }
 
     ClickHandler = () =>{
@@ -51,9 +22,9 @@ class Index extends Component {
                             <Col lg={4} md={6} sm={12}>
                                 <div className="widget about-widget">
                                     <div className="footer-logo widget-title">
-                                        <Link onClick={this.ClickHandler} to="/"><p>{this.state.about}</p></Link>
+                                        <Link onClick={this.ClickHandler} to="/"><p>{this.props.about}</p></Link>
                                     </div>
-                                    <p></p>
+                                    {/*<p></p>*/}
                                     <ul>
                                         <li><Link onClick={this.ClickHandler} to="/"><i className="ti-facebook"></i></Link></li>
                                         <li><Link onClick={this.ClickHandler} to="/"><i className="ti-twitter-alt"></i></Link></li>
@@ -81,9 +52,9 @@ class Index extends Component {
                                     </div>
                                     <div className="contact-ft">
                                         <ul>
-                                            <li><i className="fi flaticon-pin"></i>{this.state.address}</li>
-                                            <li><i className="fi flaticon-call"></i>{this.state.phone}</li>
-                                            <li><i className="fi flaticon-envelope"></i>{this.state.email}</li>
+                                            <li><i className="fi flaticon-pin"></i>{this.props.address}</li>
+                                            <li><i className="fi flaticon-call"></i>{this.props.phone}</li>
+                                            <li><i className="fi flaticon-envelope"></i>{this.props.email}</li>
                                         </ul>
                                     </div>
                                 </div>
