@@ -8,7 +8,7 @@ import axios from "../axios-plugin";
 class About extends Component {
 
     constructor(props) {
-        super(props);
+        super();
         this.state = {
             basePath: "http://127.0.0.1:8000",
             logo: null,

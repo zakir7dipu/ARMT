@@ -1,14 +1,32 @@
 import React, {Component} from 'react';
 import {Col, Container, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
-import causesimg from '../../assets/images/cause/img-1.png'
-import causesimg2 from '../../assets/images/cause/img-2.jpg'
-import causesimg3 from '../../assets/images/cause/img-3.jpg'
 import './style.css'
+import axios from "../../axios-plugin";
 class Index extends Component {
 
-    ClickHandler = () =>{
-        window.scrollTo(10, 0);
+    constructor() {
+        super();
+        this.state = {
+            basePath: "http://127.0.0.1:8000",
+            projects: []
+        }
+    }
+
+    // ClickHandler = () =>{
+    //     window.scrollTo(10, 0);
+    // }
+
+    componentDidMount() {
+        axios.get(`/api/app/projects`)
+            .then(res => {
+                this.setState({
+                    projects: res.data
+                })
+                console.log(this.state.projects)
+            }).catch(err => {
+            console.log(err)
+        });
     }
 
     render() {
@@ -18,73 +36,36 @@ class Index extends Component {
                     <Col lg={6} className="offset-lg-3">
                         <div className="section-title section-title2 text-center">
                             <div className="thumb-text">
-                                <span>CAUSES</span>
+                                <span>PROJECTS</span>
                             </div>
-                            <h2>Latest Caused of Khairah.</h2>
-                            <p>It is a long established fact that reader distracted by the the readable content off page looking at its layout point.</p>
+                            <h2>Our Running Projects</h2>
+                            {/*<p>It is a long established fact that reader distracted by the the readable content off page looking at its layout point.</p>*/}
                         </div>
                     </Col>
                     <Row>
-                        <Col lg={4} md={6}>
-                            <div className="cause-item">
-                                <div className="cause-top">
-                                    <div className="cause-img">
-                                        <img src={causesimg} alt="" />
-                                        <div className="case-btn">
-                                            <Link onClick={this.ClickHandler} to="/donate" className="theme-btn">Donate Now<i className="fa fa-angle-double-right" aria-hidden="true"></i></Link>
+                        {
+                            this.state.projects.map(item => {
+                                return(
+                                    <Col lg={4} md={6} key={item.id}>
+                                        <div className="cause-item">
+                                            <div className="cause-top">
+                                                <div className="cause-img">
+                                                    <img src={this.state.basePath+item.image} alt="" />
+                                                    <div className="case-btn">
+                                                        <Link to={'/project-single/'+item.id} className="theme-btn">View<i className="fa fa-angle-double-right" aria-hidden="true"></i></Link>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="cause-text">
+                                                <h3><Link to={'/project-single/'+item.id}>{item.title}</Link></h3>
+                                                <p>{item.sub_title}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div className="cause-text">
-                                    <ul>
-                                        <li><Link onClick={this.ClickHandler} to="/">GOAL : $9860</Link></li>
-                                        <li><Link onClick={this.ClickHandler} to="/">RISED : $768</Link></li>
-                                    </ul>
-                                    <h3><Link onClick={this.ClickHandler} to="/case-single">Financial Help for Poor Families</Link></h3>
-                                    <p>It is a long established fact that a reader will be distracted.</p>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col lg={4} md={6}>
-                            <div className="cause-item">
-                                <div className="cause-top">
-                                    <div className="cause-img">
-                                        <img src={causesimg2} alt="" />
-                                        <div className="case-btn">
-                                            <Link onClick={this.ClickHandler} to="/donate" className="theme-btn">Donate Now<i className="fa fa-angle-double-right" aria-hidden="true"></i></Link>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="cause-text">
-                                    <ul>
-                                        <li><Link onClick={this.ClickHandler} to="/">GOAL : $9860</Link></li>
-                                        <li><Link onClick={this.ClickHandler} to="/">RISED : $768</Link></li>
-                                    </ul>
-                                    <h3><Link onClick={this.ClickHandler} to="/case-single">Education for Poor Children</Link></h3>
-                                    <p>It is a long established fact that a reader will be distracted.</p>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col lg={4} md={6}>
-                            <div className="cause-item">
-                                <div className="cause-top">
-                                    <div className="cause-img">
-                                        <img src={causesimg3} alt="" />
-                                        <div className="case-btn">
-                                            <Link onClick={this.ClickHandler} to="/donate" className="theme-btn">Donate Now<i className="fa fa-angle-double-right" aria-hidden="true"></i></Link>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="cause-text">
-                                    <ul>
-                                        <li><Link onClick={this.ClickHandler} to="/">GOAL : $9860</Link></li>
-                                        <li><Link onClick={this.ClickHandler} to="/">RISED : $768</Link></li>
-                                    </ul>
-                                    <h3><Link onClick={this.ClickHandler} to="/case-single">Education for Poor Children</Link></h3>
-                                    <p>It is a long established fact that a reader will be distracted.</p>
-                                </div>
-                            </div>
-                        </Col>
+                                    </Col>
+                                )
+                            })
+                        }
+
                     </Row>
                 </Container>
             </div>

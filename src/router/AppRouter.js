@@ -4,6 +4,7 @@ import Home from "../pages/home";
 import About from "../pages/about";
 import Project from "../pages/project";
 import Contact from "../pages/contact";
+import ProjectSingle from "../pages/projectSingle";
 class AppRouter extends Component {
     render() {
         return (
@@ -13,6 +14,7 @@ class AppRouter extends Component {
                     <Route exact path="/about" component={About}/>
                     <Route exact path="/project" component={Project}/>
                     <Route exact path="/contact" component={Contact}/>
+                    <Route exact path="/project-single/:projectId" component={ProjectSingle}/>
                 </Switch>
             </Fragment>
         );
