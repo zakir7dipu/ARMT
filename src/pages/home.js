@@ -14,7 +14,7 @@ class Home extends Component {
     constructor(props) {
         super();
         this.state = {
-            basePath: "http://127.0.0.1:8000",
+            basePath: "http://server.bizzsol.com.bd",
             logo: null,
             about: null,
             address: null,

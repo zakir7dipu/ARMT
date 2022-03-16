@@ -19,7 +19,7 @@ class Hero extends Component {
         super();
 
         this.state = {
-            basePath: "http://127.0.0.1:8000",
+            basePath: "http://server.bizzsol.com.bd",
             sliders: []
         }
     }

@@ -5,7 +5,6 @@ import '../../assets/css/custom.css'
 import './style.css'
 import {Link} from "react-router-dom";
 import axios from "../../axios-plugin";
-// import {Link} from "react-router-dom";
 
 class Index extends Component {
     constructor(props) {
