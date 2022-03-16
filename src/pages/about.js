@@ -44,7 +44,7 @@ class About extends Component {
                 <Navbar logo={this.state.basePath+this.state.logo} phone={this.state.phone} email={this.state.email}/>
                 <PageTitle pageTitle={'About Us'} pagesub={'About'} banner_image={this.state.bannerImage}/>
                 <AboutSection/>
-                <Footer/>
+                <Footer about={this.state.about} address={this.state.address} phone={this.state.phone} email={this.state.email}/>
                 <Scrollbar/>
             </Fragment>
         );
