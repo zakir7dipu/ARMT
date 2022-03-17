@@ -12,7 +12,7 @@ class Contact extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            basePath: "http://server.bizzsol.com.bd",
+            basePath: process.env.React_App_Base_Url,
             logo: null,
             about: null,
             address: null,

@@ -2,7 +2,7 @@ import axios from "axios";
 
 const instance = axios.create({
 
-    baseURL: "http://server.bizzsol.com.bd"
+    baseURL: "https://demo4.savar121gps.com/"
 });
 
 export default instance;

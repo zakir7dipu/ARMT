@@ -11,7 +11,7 @@ class Partner extends Component {
         super();
 
         this.state = {
-            basePath: "http://server.bizzsol.com.bd",
+            basePath: process.env.React_App_Base_Url,
             partners: []
         }
     }

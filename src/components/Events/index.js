@@ -14,7 +14,7 @@ class Index extends Component {
     constructor() {
         super();
         this.state = {
-            basePath: "http://server.bizzsol.com.bd",
+            basePath: process.env.React_App_Base_Url,
             events: []
         }
     }

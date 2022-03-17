@@ -6,10 +6,6 @@ class Index extends Component {
     constructor(props) {
         super();
     }
-//     on={()=>{
-//     console.log('ok')
-//     document.querySelector('#projectDetails').innerHTML = this.props.description
-// // }}
 
     render() {
         return (

@@ -12,7 +12,7 @@ class Index extends Component {
     constructor() {
         super();
         this.state = {
-            basePath: "http://127.0.0.1:8000",
+            basePath: process.env.React_App_Base_Url,
             sectionImage: null,
             thumb: null,
             title: null,
