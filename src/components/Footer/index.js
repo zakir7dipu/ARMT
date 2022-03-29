@@ -20,7 +20,6 @@ class Index extends Component {
                 this.setState({
                     socialLinks: res.data
                 })
-                console.log(this.state.socialLinks)
             }).catch(err => {
             console.log(err)
         });
@@ -43,18 +42,22 @@ class Index extends Component {
                                     </div>
                                     {/*<p></p>*/}
                                     <ul>
-                                        <li><Link onClick={()=>{
+                                        <li><Link onClick={(e)=>{
+                                            e.preventDefault()
                                         this.goToSocialLinks('facebook')
-                                    }} to="javascript:void(0)"><i className="ti-facebook"></i></Link></li>
-                                        <li><Link onClick={()=>{
+                                    }} to="#"><i className="ti-facebook"></i></Link></li>
+                                        <li><Link onClick={(e)=>{
+                                            e.preventDefault()
                                         this.goToSocialLinks('tweeter')
-                                    }} to="javascript:void(0)"><i className="ti-twitter-alt"></i></Link></li>
-                                        <li><Link onClick={()=>{
+                                    }} to="#"><i className="ti-twitter-alt"></i></Link></li>
+                                        <li><Link onClick={(e)=>{
+                                            e.preventDefault()
                                         this.goToSocialLinks('linkedin')
-                                    }} to="javascript:void(0)"><i className="ti-linkedin"></i></Link></li>
-                                        <li><Link onClick={()=>{
+                                    }} to="#"><i className="ti-linkedin"></i></Link></li>
+                                        <li><Link onClick={(e)=>{
+                                            e.preventDefault()
                                         this.goToSocialLinks('pinterest')
-                                    }} to="javascript:void(0)"><i className="ti-pinterest"></i></Link></li>
+                                    }} to="#"><i className="ti-pinterest"></i></Link></li>
                                     </ul>
                                 </div>
                             </Col>

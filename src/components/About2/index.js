@@ -1,11 +1,7 @@
 import React, {Component} from 'react';
 import {Col, Container, Row} from "react-bootstrap";
-
-import abimg2 from '../../assets/images/about/1.png'
-import abimg3 from '../../assets/images/about/2.png'
 import abimg4 from '../../assets/images/shape/shape2.png'
 import VideoModal from "../ModalVideo";
-import {Link} from "react-router-dom";
 import '../../assets/css/flaticon.css'
 import axios from "../../axios-plugin";
 class Index extends Component {
@@ -18,10 +14,6 @@ class Index extends Component {
             title: null,
             discription: null
         }
-    }
-
-    ClickHandler = () =>{
-        window.scrollTo(10, 0);
     }
 
     componentDidMount() {
@@ -65,26 +57,26 @@ class Index extends Component {
                                     <h2>{this.state.title}</h2>
                                 </div>
                                 <p className="aboutPageDescription"></p>
-                                <div className="ab-icon-area">
-                                    <div className="about-icon-wrap">
-                                        <div className="about-icon-item">
-                                            <div className="ab-icon">
-                                                <img draggable="false" src={abimg2} alt="" />
-                                            </div>
-                                            <div className="ab-text">
-                                                <h2><Link onClick={this.ClickHandler} to="/">Save  Children.</Link></h2>
-                                            </div>
-                                        </div>
-                                        <div className="about-icon-item">
-                                            <div className="ab-icon ab-icon2">
-                                                <img draggable="false" src={abimg3} alt="" />
-                                            </div>
-                                            <div className="ab-text">
-                                                <h2><Link onClick={this.ClickHandler} to="/">Fresh And  Clean Water.</Link></h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                {/*<div className="ab-icon-area">*/}
+                                {/*    <div className="about-icon-wrap">*/}
+                                {/*        <div className="about-icon-item">*/}
+                                {/*            <div className="ab-icon">*/}
+                                {/*                <img draggable="false" src={abimg2} alt="" />*/}
+                                {/*            </div>*/}
+                                {/*            <div className="ab-text">*/}
+                                {/*                <h2><Link onClick={this.ClickHandler} to="/">Save  Children.</Link></h2>*/}
+                                {/*            </div>*/}
+                                {/*        </div>*/}
+                                {/*        <div className="about-icon-item">*/}
+                                {/*            <div className="ab-icon ab-icon2">*/}
+                                {/*                <img draggable="false" src={abimg3} alt="" />*/}
+                                {/*            </div>*/}
+                                {/*            <div className="ab-text">*/}
+                                {/*                <h2><Link onClick={this.ClickHandler} to="/">Fresh And  Clean Water.</Link></h2>*/}
+                                {/*            </div>*/}
+                                {/*        </div>*/}
+                                {/*    </div>*/}
+                                {/*</div>*/}
                             </div>
                         </Col>
                     </Row>

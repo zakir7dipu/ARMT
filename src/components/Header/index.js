@@ -18,13 +18,14 @@ class Index extends Component {
     }
 
     componentDidMount() {
-        if (window.location.pathname === '/'){
+        console.log(window.location)
+        if (window.location.href === window.location.origin+'/#/'){
             this.setState({homeNav: "active",})
-        }else if (window.location.pathname === '/about'){
+        }else if (window.location.href === window.location.origin+'/#/about'){
             this.setState({aboutNav: "active",})
-        }else if (window.location.pathname === '/project'){
+        }else if (window.location.href === window.location.origin+'/#/project'){
             this.setState({projectNav: "active",})
-        }else if (window.location.pathname === '/contact'){
+        }else if (window.location.href === window.location.origin+'/#/contact'){
             this.setState({contactNav: "active",})
         }
     }

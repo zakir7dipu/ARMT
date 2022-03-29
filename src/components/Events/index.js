@@ -27,7 +27,6 @@ class Index extends Component {
         axios.get(`/api/app/events`)
             .then(res => {
                 this.setState({events: res.data})
-                console.log(this.state.events)
             }).catch(err => {
             console.log(err)
         })

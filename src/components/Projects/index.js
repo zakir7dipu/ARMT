@@ -13,10 +13,6 @@ class Index extends Component {
         }
     }
 
-    // ClickHandler = () =>{
-    //     window.scrollTo(10, 0);
-    // }
-
     componentDidMount() {
         axios.get(`/api/app/projects`)
             .then(res => {
