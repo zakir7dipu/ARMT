@@ -53,15 +53,15 @@ class Hero extends Component {
                             <div className="slide" key={item.id}>
                                 <div className="slide-inner" style={{ backgroundImage: `url(${this.state.basePath+item.image})`}}>
                                     <Container>
-                                        <div className="slide-thumb">
-                                            <span>{item.thumb}</span>
-                                        </div>
+                                        {/*<div className="slide-thumb">*/}
+                                        {/*    <span>{item.thumb}</span>*/}
+                                        {/*</div>*/}
                                         <div className="slide-title">
                                             <h2>{item.title}</h2>
                                         </div>
-                                        <div data-swiper-parallax="400" className="slide-text">
-                                            <p>{item.sub_title}</p>
-                                        </div>
+                                        {/*<div data-swiper-parallax="400" className="slide-text">*/}
+                                        {/*    <p>{item.sub_title}</p>*/}
+                                        {/*</div>*/}
                                         {
                                             item.btn_text?`<div  className="slide-btns">\\n' +
                                                 '                                            <Link to="${item.btn_url}" className="theme-btn">${item.btn_text}<i className="fa fa-angle-double-right" aria-hidden="true"></i></Link>\\n' +

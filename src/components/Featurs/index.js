@@ -26,7 +26,7 @@ class Index extends Component {
                                 </div>
                                 <h2>The great journey to end poverty for good begins with a child.</h2>
                                 <p>It is a long established fact that reader distracted by the the readable content off page looking at its layout point that it has.</p>
-                                <Link to="#" className="theme-btn">Donate Now<i className="fa fa-angle-double-right" aria-hidden="true"></i></Link>
+                                <Link to="/about" className="theme-btn">See More<i className="fa fa-angle-double-right" aria-hidden="true"></i></Link>
                             </div>
                         </Col>
 
