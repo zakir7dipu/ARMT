@@ -20,9 +20,10 @@ class Index extends Component {
                 this.setState({
                     socialLinks: res.data
                 })
-            }).catch(err => {
-            console.log(err)
-        });
+            })
+            .catch(err => {
+                console.log(err)
+            });
     }
 
     goToSocialLinks = (e) => {

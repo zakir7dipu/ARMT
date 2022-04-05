@@ -18,7 +18,6 @@ class Index extends Component {
     }
 
     componentDidMount() {
-        console.log(window.location)
         if (window.location.href === window.location.origin+'/#/'){
             this.setState({homeNav: "active",})
         }else if (window.location.href === window.location.origin+'/#/about'){

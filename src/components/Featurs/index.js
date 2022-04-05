@@ -6,6 +6,8 @@ import featuresimg3 from '../../assets/images/features/img-3.png'
 import featuresimg4 from '../../assets/images/features/img-4.png'
 import './style.css'
 import {Link} from "react-router-dom";
+import {BiChevronsRight} from "@react-icons/all-files/bi/BiChevronsRight";
+
 class Index extends Component {
 
     ClickHandler = () =>{
@@ -21,11 +23,19 @@ class Index extends Component {
                             <div className="features-text">
                                 <div className="section-title">
                                     <div className="thumb-text">
-                                        <span>FEATURES</span>
+                                        <span>GOAL</span>
                                     </div>
                                 </div>
-                                <h2>The great journey to end poverty for good begins with a child.</h2>
-                                <p>It is a long established fact that reader distracted by the the readable content off page looking at its layout point that it has.</p>
+                                <ul className="text-light">
+                                    <li><p className="m-0"><BiChevronsRight/> To ensure Safe Water & Food</p></li>
+                                    <li><p className="m-0"><BiChevronsRight/>To provide Health Care Service</p></li>
+                                    <li><p className="m-0"><BiChevronsRight/>To offer Ambulance and Hearse Services</p></li>
+                                    <li><p className="m-0"><BiChevronsRight/>To uplift quality of life</p></li>
+                                </ul>
+                                <h5 className="text-light mt-4">Vision</h5>
+                                <p> Help the People In need</p>
+                                <h5 className="text-light">Mission</h5>
+                                <p> To go many extra miles to ensure healthy and meaningful life for all.</p>
                                 <Link to="/about" className="theme-btn">See More<i className="fa fa-angle-double-right" aria-hidden="true"></i></Link>
                             </div>
                         </Col>
@@ -39,7 +49,7 @@ class Index extends Component {
                                                 <img draggable="false" src={featuresimg} alt="" />
                                             </div>
                                             <div className="features-content">
-                                                <h2><Link onClick={this.ClickHandler} to="/">Cancer Treatment</Link></h2>
+                                                <h2><Link onClick={this.ClickHandler} to="/">Safe Water Projects</Link></h2>
                                             </div>
                                         </div>
                                     </div>
@@ -49,7 +59,7 @@ class Index extends Component {
                                                 <img draggable="false" src={featuresimg2} alt="" />
                                             </div>
                                             <div className="features-content">
-                                                <h2><Link onClick={this.ClickHandler} to="/">Hospital Build</Link></h2>
+                                                <h2><Link onClick={this.ClickHandler} to="/">Health for Those in Need</Link></h2>
                                             </div>
                                         </div>
                                     </div>
@@ -59,7 +69,7 @@ class Index extends Component {
                                                 <img draggable="false" src={featuresimg3} alt="" />
                                             </div>
                                             <div className="features-content">
-                                                <h2><Link onClick={this.ClickHandler} to="/">Environtment Recyle</Link></h2>
+                                                <h2><Link onClick={this.ClickHandler} to="/">Ambulance Services</Link></h2>
                                             </div>
                                         </div>
                                     </div>
@@ -69,7 +79,7 @@ class Index extends Component {
                                                 <img draggable="false" src={featuresimg4} alt="" />
                                             </div>
                                             <div className="features-content">
-                                                <h2><Link onClick={this.ClickHandler} to="/">Food & Build Home</Link></h2>
+                                                <h2><Link onClick={this.ClickHandler} to="/">Food Drives</Link></h2>
                                             </div>
                                         </div>
                                     </div>
