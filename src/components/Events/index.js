@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 import {Col, Container, Row} from "react-bootstrap";
-import event1 from '../../assets/images/event/1.jpg'
-// import event2 from '../../assets/images/event/2.jpg'
-// import event3 from '../../assets/images/event/3.jpg'
 
 import './style.css'
 import {Link} from "react-router-dom";
@@ -52,7 +49,7 @@ class Index extends Component {
                                     <span>EVENTS</span>
                                 </div>
                                 <h2>Our Running Events</h2>
-                                {/*<p>It is a long established fact that reader distracted by the the readable content off page looking at its layout point.</p>*/}
+
                             </div>
                         </div>
                     </Row>
