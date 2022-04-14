@@ -87,21 +87,6 @@ class Index extends Component {
                                     </div>
                                 </div>
                             </Col>
-                            {/*<Col lg={3} md={6} sm={12}>*/}
-                            {/*    <div className="widget instagram">*/}
-                            {/*        <div className="widget-title">*/}
-                            {/*            <h3>Instagram</h3>*/}
-                            {/*        </div>*/}
-                            {/*        <ul className="d-flex">*/}
-                            {/*            <li><Link onClick={this.ClickHandler} to="/"><img src={n1} alt=""/></Link></li>*/}
-                            {/*            <li><Link onClick={this.ClickHandler} to="/"><img src={n2} alt=""/></Link></li>*/}
-                            {/*            <li><Link onClick={this.ClickHandler} to="/"><img src={n3} alt=""/></Link></li>*/}
-                            {/*            <li><Link onClick={this.ClickHandler} to="/"><img src={n4} alt=""/></Link></li>*/}
-                            {/*            <li><Link onClick={this.ClickHandler} to="/"><img src={n5} alt=""/></Link></li>*/}
-                            {/*            <li><Link onClick={this.ClickHandler} to="/"><img src={n6} alt=""/></Link></li>*/}
-                            {/*        </ul>*/}
-                            {/*    </div>*/}
-                            {/*</Col>*/}
                         </Row>
                     </Container>
                 </div>

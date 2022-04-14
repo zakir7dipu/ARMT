@@ -4,7 +4,6 @@ import Hero from "../components/Hero";
 import About from "../components/About";
 import Features from "../components/Featurs";
 import EventSection from "../components/Events";
-import Partner from "../components/Partner";
 import Footer from "../components/Footer";
 import Scrollbar from "../components/Scrollbar";
 import axios from "../axios-plugin";

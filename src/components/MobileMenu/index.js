@@ -58,8 +58,6 @@ export default class MobileMenu extends Component {
         return (
             <div>
                 <div className={`mobileMenu ${isMenuShow ? 'show' : ''}`}>
-                    {/* <div className="clox" onClick={this.menuHandler}>Close Me</div> */}
-
                     <ul className="responsivemenu">
                         {menus.map(item => {
                             return (

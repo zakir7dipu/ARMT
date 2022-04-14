@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-
-import Logo from '../../assets/images/logo/logo.png'
 import {Col, Container, Row} from "react-bootstrap";
 import HeaderTopbar from "../HeaderTopbar";
 import './style.css'

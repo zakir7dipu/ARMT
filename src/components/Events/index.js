@@ -73,11 +73,9 @@ class Index extends Component {
                                                 </div>
                                                 <div className="event-right">
                                                     <ul>
-                                                        {/*<li><i className="ti-location-pin"></i> 9:00 AM - 10:00 AM</li>*/}
                                                         <li><i className="ti-location-pin"></i> {item.location}</li>
                                                     </ul>
                                                     <h2><Link onClick={this.ClickHandler} to="/">{item.title}.</Link></h2>
-                                                    {/*<p>It is long estblished fact that a reader will be distracted aliquip exea commodo consequat velit esse cillum fugiat.</p>*/}
                                                 </div>
                                             </div>
                                         </div>
