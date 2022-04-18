@@ -6,13 +6,45 @@ import featuresimg3 from '../../assets/images/features/img-3.png'
 import featuresimg4 from '../../assets/images/features/img-4.png'
 import './style.css'
 import {Link} from "react-router-dom";
-import {BiChevronsRight} from "@react-icons/all-files/bi/BiChevronsRight";
+import axios from "../../axios-plugin";
 
 class Index extends Component {
+
+    constructor() {
+        super();
+
+        this.state = {
+            sectionTitle: '',
+            sectionDescription: '',
+            buttonText: '',
+            buttonUrl: '',
+        }
+    }
+
+    getData = () => {
+        axios.get(`/api/app/feature-section`)
+            .then(res => {
+                this.setState({
+                    sectionTitle: res.data.thumb,
+                    sectionDescription: res.data.description,
+                    buttonText: res.data.button_text,
+                    buttonUrl: res.data.button_url
+                })
+                document.querySelector('.featureSectionDescription').innerHTML = this.state.sectionDescription;
+            }).catch(err => {
+            console.log(err)
+        });
+    }
+
+    componentDidMount() {
+        this.getData()
+    }
 
     ClickHandler = () =>{
         window.scrollTo(10, 0);
     }
+
+
 
     render() {
         return (
@@ -23,20 +55,24 @@ class Index extends Component {
                             <div className="features-text">
                                 <div className="section-title">
                                     <div className="thumb-text">
-                                        <span>GOAL</span>
+                                        <span>{this.state.sectionTitle}</span>
                                     </div>
                                 </div>
-                                <ul className="text-light">
-                                    <li><p className="m-0"><BiChevronsRight/> To ensure Safe Water & Food</p></li>
-                                    <li><p className="m-0"><BiChevronsRight/>To provide Health Care Service</p></li>
-                                    <li><p className="m-0"><BiChevronsRight/>To offer Ambulance and Hearse Services</p></li>
-                                    <li><p className="m-0"><BiChevronsRight/>To uplift quality of life</p></li>
-                                </ul>
-                                <h5 className="text-light mt-4">Vision</h5>
-                                <p> Help the People In need</p>
-                                <h5 className="text-light">Mission</h5>
-                                <p> To go many extra miles to ensure healthy and meaningful life for all.</p>
-                                <Link to="/about" className="theme-btn">See More<i className="fa fa-angle-double-right" aria-hidden="true"></i></Link>
+                                <div className="featureSectionDescription text-light">
+
+                                </div>
+                                {/*<ul className="text-light">*/}
+                                {/*    <li><p className="m-0"><BiChevronsRight/> To ensure Safe Water & Food</p></li>*/}
+                                {/*    <li><p className="m-0"><BiChevronsRight/>To provide Health Care Service</p></li>*/}
+                                {/*    <li><p className="m-0"><BiChevronsRight/>To offer Ambulance and Hearse Services</p></li>*/}
+                                {/*    <li><p className="m-0"><BiChevronsRight/>To uplift quality of life</p></li>*/}
+                                {/*</ul>*/}
+                                {/*<h5 className="text-light mt-4">Vision</h5>*/}
+                                {/*<p> Help the People In need</p>*/}
+                                {/*<h5 className="text-light">Mission</h5>*/}
+                                {/*<p> To go many extra miles to ensure healthy and meaningful life for all.</p>*/}
+                                <a href={this.state.buttonUrl} target="_blank" className="theme-btn" rel="noreferrer">{this.state.buttonText}<i className="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                {/*<Link to="/about" className="theme-btn">See More</Link>*/}
                             </div>
                         </Col>
 

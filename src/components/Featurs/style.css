@@ -115,6 +115,23 @@
 .features-wrap{
   padding: 100px 0 70px; 
 }
+.featureSectionDescription {
+    margin-bottom: 2rem;
+}
+.featureSectionDescription b {
+    margin-bottom: 1rem;
+    font-size: 16pt;
+}
+.featureSectionDescription p {
+    margin: 0;
+    font-size: 12pt;
+}
+.featureSectionDescription ul {
+    margin: 1rem;
+}
+.featureSectionDescription ul li {
+    list-style: square;
+}
 
 
 

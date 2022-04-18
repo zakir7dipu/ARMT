@@ -17,7 +17,7 @@ class Index extends Component {
                 </div>
             </Fragment>
         );
-        this.projectDetailsView()
+        // this.projectDetailsView()
     }
 }
 

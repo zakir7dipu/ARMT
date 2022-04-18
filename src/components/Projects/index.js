@@ -19,7 +19,6 @@ class Index extends Component {
                 this.setState({
                     projects: res.data
                 })
-                console.log(this.state.projects)
             }).catch(err => {
             console.log(err)
         });

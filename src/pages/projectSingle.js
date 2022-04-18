@@ -11,12 +11,12 @@ class ProjectSingle extends Component {
         super();
         this.state = {
             basePath: process.env.React_App_Base_Url,
-            logo: null,
-            about: null,
-            address: null,
-            phone: null,
-            email: null,
-            bannerImage: null,
+            logo: '',
+            about: '',
+            address: '',
+            phone: '',
+            email: '',
+            bannerImage: '',
             project:{}
         }
     }

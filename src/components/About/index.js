@@ -10,14 +10,14 @@ class Index extends Component {
         super();
         this.state = {
             basePath: process.env.React_App_Base_Url,
-            sectionImage: null,
-            thumb: null,
-            title: null,
-            discription: null
+            sectionImage: '',
+            thumb: '',
+            title: '',
+            discription: ''
         }
     }
 
-    componentDidMount() {
+    getData = () => {
         axios.get(`/api/app/about`)
             .then(res => {
                 this.setState({
@@ -29,6 +29,10 @@ class Index extends Component {
             }).catch(err => {
             console.log(err)
         });
+    }
+
+    componentDidMount() {
+        this.getData()
     }
 
     aboutSectionDescription = () => {

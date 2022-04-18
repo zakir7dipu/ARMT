@@ -8,10 +8,10 @@ class Index extends Component {
     constructor(props) {
         super();
         this.state={
-            homeNav: null,
-            aboutNav: null,
-            projectNav: null,
-            contactNav: null,
+            homeNav: '',
+            aboutNav: '',
+            projectNav: '',
+            contactNav: '',
         }
     }
 

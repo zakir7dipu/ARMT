@@ -9,10 +9,10 @@ class Index extends Component {
         super();
         this.state = {
             basePath: process.env.React_App_Base_Url,
-            sectionImage: null,
-            thumb: null,
-            title: null,
-            discription: null
+            sectionImage: '',
+            thumb: '',
+            title: '',
+            discription: ''
         }
     }
 
@@ -31,13 +31,9 @@ class Index extends Component {
         });
     }
 
-    aboutPageDescription = () => {
-        document.querySelector('.aboutPageDescription').innerHTML = this.state.discription;
-    }
-
     render() {
         return (
-            <div className="about-area section-padding" onLoad={this.aboutPageDescription}>
+            <div className="about-area section-padding">
                 <Container>
                     <Row>
                         <Col lg={5} md={12} className="grid">
@@ -56,7 +52,7 @@ class Index extends Component {
                                     </div>
                                     <h2>{this.state.title}</h2>
                                 </div>
-                                <p className="aboutPageDescription"></p>
+                                <p className="aboutPageDescription" dangerouslySetInnerHTML={{__html: this.state.discription}}></p>
                             </div>
                         </Col>
                     </Row>

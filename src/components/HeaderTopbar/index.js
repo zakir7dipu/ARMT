@@ -10,7 +10,7 @@ class Index extends Component {
     constructor(props) {
         super();
         this.state = {
-            socialLinks: null
+            socialLinks: ''
         }
     }
 
