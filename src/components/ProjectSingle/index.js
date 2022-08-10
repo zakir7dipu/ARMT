@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import {Container} from "react-bootstrap";
+import {Container, Row} from "react-bootstrap";
 
 class Index extends Component {
 
@@ -9,12 +9,12 @@ class Index extends Component {
 
     render() {
         return (
-            <Fragment>
+            <Fragment dangerouslySetInnerHTML={{__html: this.props.description}}>
                 <div className="case-area section-padding" >
-                    <Container id="projectDetails" dangerouslySetInnerHTML={{__html: this.props.description}}>
-
-                    </Container>
+                    <Container id="projectDetails" dangerouslySetInnerHTML={{__html: this.props.description}} />
+                    {/* <Container>{this.props.description}</Container> */}
                 </div>
+                
             </Fragment>
         );
         // this.projectDetailsView()

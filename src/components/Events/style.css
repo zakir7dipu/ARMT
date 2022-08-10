@@ -209,6 +209,7 @@
 @media(max-width: 500px){
   .event-text{
     flex-wrap: wrap;
+    width: 100%;
   }
   .event-left{
     width: 100%;

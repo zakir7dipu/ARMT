@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { Component, Link } from "react";
 import Slider from "react-slick";
 import './style.css'
-import {Container} from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import axios from "../../axios-plugin";
 
 
@@ -19,10 +19,10 @@ class Hero extends Component {
     componentDidMount() {
         axios.get(`/api/app/slider`)
             .then(res => {
-                this.setState({sliders: res.data})
+                this.setState({ sliders: res.data })
             }).catch(err => {
-            console.log(err)
-        })
+                console.log(err)
+            })
     }
 
     render() {
@@ -41,22 +41,24 @@ class Hero extends Component {
             <section className="hero-slider hero-style-1">
                 <Slider {...settings}>
                     {this.state.sliders.map(item => {
-                        return(
+                        return (
                             <div className="slide" key={item.id}>
-                                <div className="slide-inner" style={{ backgroundImage: `url(${this.state.basePath+item.image})`}}>
+                                <div className="slide-inner" style={{ backgroundImage: `url(${this.state.basePath + item.image})` }}>
                                     <Container>
                                         <div className="slide-title">
                                             <h2>{item.title}</h2>
                                         </div>
                                         {
-                                            item.btn_text?`<div  className="slide-btns">\\n' +
+                                            item.btn_text ? `<div  className="slide-btns">\\n' +
                                                 '                                            <Link to="${item.btn_url}" className="theme-btn">${item.btn_text}<i className="fa fa-angle-double-right" aria-hidden="true"></i></Link>\\n' +
-                                                '                                        </div>`:''
+                                                '                                        </div>`: ''
                                         }
 
                                     </Container>
                                     <div className="slide-shape">
-                                        <img src={this.state.basePath+item.image} alt="" />
+                                        <a  href={item.btn_url}>
+                                            <img className="img-fluid" src={this.state.basePath + item.image} alt="" />
+                                        </a>
                                     </div>
                                 </div>
                             </div>

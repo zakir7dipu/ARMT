@@ -5,11 +5,13 @@ import About from "../pages/about";
 import Project from "../pages/project";
 import Contact from "../pages/contact";
 import ProjectSingle from "../pages/projectSingle";
+import PageLoad from '../pages/PageLoad';
 class AppRouter extends Component {
     render() {
         return (
             <Fragment>
                 <Switch>
+                    <Route exact path="/loading" component={PageLoad}/>
                     <Route exact path="/" component={Home}/>
                     <Route exact path="/about" component={About}/>
                     <Route exact path="/project" component={Project}/>
