@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {Col, Container, Row} from "react-bootstrap";
-import featuresimg from '../../assets/images/features/img-1.png'
-import featuresimg2 from '../../assets/images/features/img-2.png'
-import featuresimg3 from '../../assets/images/features/img-3.png'
-import featuresimg4 from '../../assets/images/features/img-4.png'
+import featuresimg from '../../assets/images/features/aahar-final-logo.png'
+import featuresimg2 from '../../assets/images/features/Abdur-Rahim-Health-Care-Center-Final-Logo-14.08.2022.png'
+import featuresimg3 from '../../assets/images/features/ABDUR-RAHIM-MEMORIAL-TRUST-Ambulance-service.png'
+import featuresimg4 from '../../assets/images/features/ABDUR-RAHIM-MEMORIAL-TRUST-Water-Project.png'
 import './style.css'
 import {Link} from "react-router-dom";
 import axios from "../../axios-plugin";
@@ -30,7 +30,6 @@ class Index extends Component {
                     buttonText: res.data.button_text,
                     buttonUrl: res.data.button_url
                 })
-                document.querySelector('.featureSectionDescription').innerHTML = this.state.sectionDescription;
             }).catch(err => {
             console.log(err)
         });
@@ -53,14 +52,12 @@ class Index extends Component {
                     <Row className="align-items-center">
                         <Col lg={5} md={12} sm={12}>
                             <div className="features-text">
-                                <div className="section-title">
+                                {/* <div className="section-title">
                                     <div className="thumb-text">
                                         <span>{this.state.sectionTitle}</span>
                                     </div>
-                                </div>
-                                <div className="featureSectionDescription text-light">
-
-                                </div>
+                                </div> */}
+                                <div className="featureSectionDescription text-light" dangerouslySetInnerHTML={{__html: this.state.sectionDescription}} />
                                 {/*<ul className="text-light">*/}
                                 {/*    <li><p className="m-0"><BiChevronsRight/> To ensure Safe Water & Food</p></li>*/}
                                 {/*    <li><p className="m-0"><BiChevronsRight/>To provide Health Care Service</p></li>*/}
@@ -82,41 +79,42 @@ class Index extends Component {
                                     <div className="col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div className="features-item">
                                             <div className="features-icon">
-                                                <img draggable="false" src={featuresimg} alt="" />
+                                                <img className='features-icon-img' draggable="false" src={featuresimg} alt="" />
                                             </div>
-                                            <div className="features-content">
+                                            {/* <div className="features-content">
                                                 <h2><Link onClick={this.ClickHandler} to="/">Safe Water Projects</Link></h2>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div className="features-item-2">
                                             <div className="features-icon">
-                                                <img draggable="false" src={featuresimg2} alt="" />
+                                                <img className='features-icon-img' draggable="false" src={featuresimg2} alt="" />
                                             </div>
-                                            <div className="features-content">
+                                            {/* <div className="features-content">
                                                 <h2><Link onClick={this.ClickHandler} to="/">Health for Those in Need</Link></h2>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div className="features-item-2 active">
+                                        <div className="features-item-2">
+                                        {/* active */}
                                             <div className="features-icon">
-                                                <img draggable="false" src={featuresimg3} alt="" />
+                                                <img className='features-icon-img' draggable="false" src={featuresimg3} alt="" />
                                             </div>
-                                            <div className="features-content">
+                                            {/* <div className="features-content">
                                                 <h2><Link onClick={this.ClickHandler} to="/">Ambulance Services</Link></h2>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div className="features-item">
                                             <div className="features-icon">
-                                                <img draggable="false" src={featuresimg4} alt="" />
+                                                <img className='features-icon-img' draggable="false" src={featuresimg4} alt="" />
                                             </div>
-                                            <div className="features-content">
+                                            {/* <div className="features-content">
                                                 <h2><Link onClick={this.ClickHandler} to="/">Food Drives</Link></h2>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                 </div>

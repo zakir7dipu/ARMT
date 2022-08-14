@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import {Col, Container, Row} from "react-bootstrap";
+import React, { Component } from 'react';
+import { Col, Container, Row } from "react-bootstrap";
 
 import './style.css'
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "../../axios-plugin";
 class Index extends Component {
 
@@ -16,23 +16,23 @@ class Index extends Component {
         }
     }
 
-    ClickHandler = () =>{
+    ClickHandler = () => {
         window.scrollTo(10, 0);
     }
 
     componentDidMount() {
         axios.get(`/api/app/events`)
             .then(res => {
-                this.setState({events: res.data})
+                this.setState({ events: res.data })
             }).catch(err => {
-            console.log(err)
-        })
+                console.log(err)
+            })
     }
 
     dateParser = (value) => {
         let date = new Date(value);
         return {
-            day: date.getDate() < 10 ? '0'+date.getDate():date.getDate(),
+            day: date.getDate() < 10 ? '0' + date.getDate() : date.getDate(),
             month: date.getMonth(),
             year: date.getFullYear()
         }
@@ -58,10 +58,10 @@ class Index extends Component {
                         <Col>
                             {
                                 this.state.events.map(item => {
-                                    return(
+                                    return (
                                         <div className="event-item" key={item.id}>
                                             <div className="event-img">
-                                                <img src={this.state.basePath+item.image} alt="" />
+                                                <img src={this.state.basePath + item.image} alt="" />
                                             </div>
                                             <div className="event-text">
                                                 <div className="event-left">
@@ -75,7 +75,11 @@ class Index extends Component {
                                                     <ul>
                                                         <li><i className="ti-location-pin"></i> {item.location}</li>
                                                     </ul>
-                                                    <h2><Link onClick={this.ClickHandler} to="/">{item.title}.</Link></h2>
+                                                    <h2>
+                                                        {/* <Link onClick={this.ClickHandler} to="/"> */}
+                                                            {item.title}
+                                                        {/* </Link> */}
+                                                    </h2>
                                                 </div>
                                             </div>
                                         </div>
