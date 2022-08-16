@@ -55,9 +55,9 @@ class Index extends Component {
                         <Col lg={6} md={12} className="offset-lg-1 grid">
                             <div className="about-text">
                                 <div className="section-title">
-                                    <div className="thumb-text">
+                                    {/* <div className="thumb-text">
                                         <span>{this.state.thumb}</span>
-                                    </div>
+                                    </div> */}
                                     <h2>{this.state.title}</h2>
                                 </div>
                                 <p className="aboutSectionDescription"></p>

@@ -1,0 +1,6 @@
+h1.ql-align-center, h2.ql-align-center, h3.ql-align-center, h4.ql-align-center, h5.ql-align-center, h6.ql-align-center, p.ql-align-center, a.ql-align-right, span.ql-align-right {
+    text-align: center;
+}
+h1.ql-align-right, h2.ql-align-right, h3.ql-align-right, h4.ql-align-right, h5.ql-align-right, h6.ql-align-right, p.ql-align-right, a.ql-align-right, span.ql-align-right {
+    text-align: right;
+}

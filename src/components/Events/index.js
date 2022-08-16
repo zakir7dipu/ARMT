@@ -45,9 +45,9 @@ class Index extends Component {
                     <Row>
                         <div className="col-lg-6 offset-lg-3">
                             <div className="section-title section-title2 text-center">
-                                <div className="thumb-text">
+                                {/* <div className="thumb-text">
                                     <span>EVENTS</span>
-                                </div>
+                                </div> */}
                                 <h2>Our Running Events</h2>
 
                             </div>

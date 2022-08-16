@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import Scrollbar from "../components/Scrollbar";
 import axios from "../axios-plugin";
 import "./pageloaderstyle.css";
+import "./react_quill.css";
 
 class ProjectSingle extends Component {
     constructor(props) {
